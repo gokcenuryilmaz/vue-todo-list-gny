@@ -1,26 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- Uygulamanın kök bileşeni -->
+  <div id="app">
+    <!-- Task bileşenini tasks verisi ile bağlama -->
+    <!-- v-bind:tasks="tasks" ile Task bileşenine 'tasks' adlı veri props olarak aktarılıyor -->
+    <app-task ></app-task>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// Task bileşenini içe aktarma
+import AppTask from './components/App-Task.vue';
+
 
 export default {
-  name: 'App',
+  // Bileşenin adı
+  name: "App",
+  
+  // Uygulamada kullanılacak bileşenleri tanımlama
   components: {
-    HelloWorld
+    // Task bileşenini kullanıma sunma
+    AppTask,
+  },
+  created(){
+    this.$store.dispatch('loadTasks');
   }
-}
+ };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

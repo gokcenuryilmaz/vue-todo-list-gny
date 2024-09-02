@@ -1,0 +1,240 @@
+
+/* 
+general 
+-------
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font: 15px/1.4 "Poppins", sans-serif;
+    background: #FFC0CB; /* Açık pembe arka plan */
+    color: #333;
+  }
+  
+  #app {
+    padding: 60px 0;
+  }
+  
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    height: 50px;
+    font: 15px/1.4 "Poppins", sans-serif;
+    padding: 15px;
+    background: #ffe4e1; /* Pembe-turuncu tonunda */
+    color: #333;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: border 0.3s linear;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    border: 1px solid #FF69B4; /* Sıcak pembe */
+  }
+  
+  button {
+    cursor: pointer;
+    font: 15px/1.4 "Poppins", sans-serif;
+    color: #FF1493; /* Derin pembe */
+    transition: all 0.3s linear;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  h1 {
+    font-size: 22px;
+    color: #FF1493; /* Derin pembe */
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 
+  task 
+  ----
+  */
+  .task {
+    background: #fff;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.1);
+  }
+  
+  .title {
+    text-align: center;
+    margin: 0 0 20px;
+  }
+  
+  .form {
+    position: relative;
+    margin: 0 0 30px;
+  }
+  
+  .form button {
+    background: none;
+    border: none;
+    color: #FF69B4; /* Sıcak pembe */
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+  
+  .clearBtns {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 20px;
+  }
+  
+  .clearBtns button {
+    width: 100%;
+    background: #FF69B4; /* Sıcak pembe */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 5px;
+  }
+  
+  .clearBtns button:hover {
+    background: #FF1493; /* Derin pembe */
+  }
+  
+  .pendingTasks {
+    padding: 0 6px;
+    color: #FF1493; /* Derin pembe */
+  }
+  
+  /* 
+  task items
+  ----------
+  */
+  .taskItems {
+    padding: 0 10px;
+  }
+  
+  .taskItems li {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 20px;
+  }
+  
+  .taskItems button {
+    background: none;
+    border: none;
+  }
+  
+  .taskItems button:hover {
+    color: #FF69B4; /* Sıcak pembe */
+  }
+  
+  .taskItems .toggle i {
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    color: #FF1493; /* Derin pembe */
+  }
+  
+  .taskItems .toggle.toggle-completed {
+    text-decoration: line-through;
+    color: #FF69B4; /* Sıcak pembe */
+  }
+  h3{
+    font-size: 22px;
+    color: #FF1493; /* Derin pembe */
+    text-align: center;
+  
+  }
+
+  $primary: #FF1493; /* Koyu Pembe */
+$secondary: #d8d8d8;
+$size: 100px;
+
+/* Genel buton stili */
+.btn {
+  border: none;
+  padding: 0;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  font-size: 3em;
+  color: #fff;
+  margin: 0;
+  background:  #FF1493; /* Koyu pembe */
+  position: relative;
+  z-index: 999;
+  display: inline-block;
+  line-height: 100px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+}
+
+/* Dinleme sırasında yanıp sönme animasyonu */
+.listening {
+  animation: blink 1s infinite;
+}
+
+/* Yanıp sönme animasyonu */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Pulse animasyonu */
+.pulse-ring {
+  content: '';
+  width: 100px;
+  height: 100px;
+  background:  #FF1493; /* Koyu pembe */
+  border: 5px solid  #FF1493; /* Koyu pembe */
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  animation: pulsate infinite 1.5s;
+}
+
+/* Pulsate animasyonu tanımı */
+@keyframes pulsate {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.3, 1.3);
+    opacity: 0;
+  }
+}
+
+/* Type2 arka plan */
+.type2 {
+  background:  #FF1493; /* Koyu pembe */
+}
+
+.type2 .pulse-ring {
+  background: transparent;
+}
